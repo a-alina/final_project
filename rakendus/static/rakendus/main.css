@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    background-color: black;
+    padding: 0 50px;
+}
+
+p{
+    color: white;
+}
+
+.navbar {
+    overflow: hidden;
+    position: fixed; 
+    top: 0; 
+    width: 100%; 
+}
+
+/* main page css */
+
+.content_main{
+    justify-content: center;
+    align-items: center;
+    padding: 0 100px;
+}
+
+h1{
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 100px;
+}
+
+h3{
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 100px;
+}
+
+.button_wrapper{
+    text-align: center;
+    margin: 0;
+}
+
+/* choose file page css */
+
+.choose_file_form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.choose_file_form p{
+    color:black
+}
+
+.upload {
+    border-radius: 10px;
+    background: #c0c0c0;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.list_of_files{
+    border-radius: 10px;
+    background: #c0c0c0 ;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+}
+
+.choose_file_submit{
+    text-align: center;
+    margin: 0;
+    padding-top: 50px;
+}
+
+.instr{
+    padding-bottom: 20px;
+}
+
+.instr p{
+    text-align: center;
+    color: white
+}
+
+/* quiz page css */
+
+.quiz_wrapper{
+    display: flex-column;
+}
+
+.quiz_wrapper p{
+    color: white;
+}
+
+.pair{
+    display: flex-column;
+    padding-bottom: 20px;
+}
+
+
+
+.questions_context textarea{
+    width: 100%;
+}
+
+/* test file page css */
+
+.bool{
+    text-align: center;
+}
+
+h2{
+    color: white;
+
+}
+
+td, th{
+    padding: 20px 20px;
+}
+
+table th{
+    background-color: #8d99ae;
+    color: black;
+
+}
+
+table tr:nth-child(even) td{
+    background-color:#ccc;
+}
+
+table tr:nth-child(odd) td{
+    background-color:#8d99ae;
+}
+
+.files table th{
+    background-color: #8d99ae;
+    color: black;
+
+}
+
+
+.test_wrapper .name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+
+/* user page css */
+.loginfrm{
+    color: white;
+  }
+
+help-text {
+    color: rgb(240,240,240)
+}
+
+#id_username_helptext, #id_password2_helptext, #id_password1_helptext  {
+    color: white;
+}
+

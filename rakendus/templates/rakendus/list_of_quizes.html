@@ -1,0 +1,34 @@
+{% extends "rakendus/base.html" %}
+
+{% block content %}
+<div class="list_wrapper">
+{% if content %}
+<table>
+    <tr>
+    <th>Quiz Name </th>
+    <th>Attempt</th>
+    <th>Score</th>
+    <th>Review</th>
+    <th></th>
+    </tr>
+    {% for i, v in content.items %}
+    <tr>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <td> {{ v.quiz_name }} </td>
+        <td> {{ v.attempt_number }}</td>
+        <td> {{ v.score }} </td>
+        <td> <a href="{% url 'test' param1=v.quiz_name param2=v.attempt_number %}">Link</a></td>
+        <td class="bt_noback"> <button type="submit" name="delete_button" value="{{ v.quiz_name }}|{{ v.attempt_number }}"> Delete </button></td>
+        
+        
+    </form>
+    </tr>
+    {% endfor %} 
+</table>
+{% else %}
+<p>No tests yet to show</p>
+{% endif %}
+</div>
+{% endblock content %}

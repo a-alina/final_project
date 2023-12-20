@@ -1,0 +1,16 @@
+{% extends "rakendus/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<form method="post" class="loginfrm">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <p>Don't have an account yet? <a href="/sign_up">Here</a>!</p>
+    <button type="submit" class="btn btn-success">Login</button>
+  </form>
+
+{% endblock content %}
+
+
+

@@ -1,0 +1,36 @@
+{% extends "rakendus/base.html" %}
+
+{% block content %}
+<div class="test_wrapper">
+    <div class="name">
+        <h2> Check test {{quiz_name}} attempt {{attempt_number }} </h2>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Question</th>
+                <th>Correct Answer</th>
+                <th>Your answer</th>
+                <th>True/False</th>
+            </tr>
+            {% for i in results %}
+            <tr> 
+                <td> {{ i.question }} </td>
+                <td> {{ i.correct_answer }}</td>
+                <td> {{ i.user_answer }} </td>
+                <td class="bool"> <input type="checkbox" name="{{ i.question }}" {% if instance.checkbox_field %}checked{% endif %}></td>
+            </tr>
+            {% endfor %} 
+        </table>
+        <div class="choose_file_submit">
+            <button>Submit</button>
+        </div>
+    </form>
+        
+ 
+                 
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends "rakendus/base.html" %}
+
+{% block content %}
+
+
+<div class="files">
+        {% if content %}
+        <table>
+            <tr>
+                <th>Name </th>
+                <th> </th>
+         
+            </tr>
+        
+    
+            {% for v in content %}
+
+                <tr>
+                    <td> {{ v.name }} </td>
+                <form method="POST"">
+                        {% csrf_token %}
+                    <td> <button type="submit" name="delete_button" value="{{v.name }}"> Delete </button> </td>
+                </tr>
+            </form>
+            {% endfor %}
+        </table>
+            
+            
+            {% else %}
+            <p>No files yet to show</p>
+            {% endif %}
+         
+</div>
+
+
+
+
+{% endblock content %}

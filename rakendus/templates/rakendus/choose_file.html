@@ -1,0 +1,50 @@
+{% extends "rakendus/base.html" %}
+
+{% block content %}
+
+<div class="choose_file_wrapper">
+    <div class="instr">
+        <p>TO START A QUIZ, PLEASE UPLOAD/choose THE FILE and name a test</p>
+    </div>
+    <div class="choose_file_form">
+        <div class="upload">
+
+        <form method="POST" enctype="multipart/form-data" name="upload">
+            {% csrf_token %}
+        
+            {{ form.as_p}}
+            <input type="submit" value="Upload", name="upload">
+        </form>
+
+        </div>
+
+        <div class="list_of_files">
+            {% if names %}
+                <p>Choose from the list</p>
+                <form method="POST" name="doc_name">
+                    {% csrf_token %}
+
+                    {% for name in names %}
+                      <input type="radio" id="{{ name }}" name="selected_document" value="{{ name }}">
+                      <label for="{{ name }}">{{ name }}</label><br>
+                    {% endfor %}
+                    <div class="choose_file_submit">
+                        <button type="submit" class="btn btn-light">Start</button>
+                    </div>
+                  </form>
+            {% else %}
+            <p>No files yet list</p>
+            {% endif %}
+         
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+{% endblock content %}

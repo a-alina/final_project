@@ -1,0 +1,25 @@
+{% extends "rakendus/base.html" %}
+
+{% block content %}
+<div class="quiz_wrapper">
+    
+    
+    <h1>{{ quiz_name }} {{ attempt_number }}</h1>
+    <div class="questions_context">
+    <form method="POST">
+        {% csrf_token %}
+        {% for i in quiz %}
+        <div class="pair">
+            <p>{{ i.question }}</p>
+            <textarea id="my_textarea" name="{{ i.question }}" rows="4" cols="50"></textarea>
+        </div>
+        {% endfor %}
+        <div class="choose_file_submit">
+            <button>Submit</button>
+        </div>
+    </form>
+    </div>
+
+
+</div>
+{% endblock content %}
